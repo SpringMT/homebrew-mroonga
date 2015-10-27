@@ -23,7 +23,7 @@ class Mroonga < Formula
   end
 
   if build.include?("use-homebrew-mysql")
-    depends_on "mysql"
+    depends_on "mysql56-with-q4m"
   elsif build.include?("use-homebrew-mariadb")
     depends_on "mariadb"
   end
@@ -35,7 +35,7 @@ class Mroonga < Formula
 
   def install
     if build.include?("use-homebrew-mysql")
-      mysql_formula_name = "mysql"
+      mysql_formula_name = "mysql56-with-q4m"
     elsif build.include?("use-homebrew-mariadb")
       mysql_formula_name = "mariadb"
     else
